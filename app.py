@@ -23,7 +23,7 @@ st.markdown("""
     .hero-title {
         font-size: 3rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #667eea, #764ba2);
+        background: linear-gradient(135deg, #e63946, #c1121f);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
@@ -36,8 +36,8 @@ st.markdown("""
         margin-bottom: 2rem;
     }
     .result-box {
-        background: linear-gradient(135deg, #667eea22, #764ba222);
-        border: 1px solid #667eea55;
+        background: linear-gradient(135deg, #e6394622, #c1121f22);
+        border: 1px solid #e6394655;
         border-radius: 16px;
         padding: 2rem;
         text-align: center;
@@ -46,10 +46,10 @@ st.markdown("""
     .result-price {
         font-size: 2.5rem;
         font-weight: 800;
-        color: #667eea;
+        color: #e63946;
     }
     .stButton > button {
-        background: linear-gradient(135deg, #667eea, #764ba2) !important;
+        background: linear-gradient(135deg, #e63946, #c1121f) !important;
         color: white !important;
         border: none !important;
         border-radius: 12px !important;
@@ -98,14 +98,15 @@ with col2:
     gear_type = st.selectbox("⚙️ Gear Type", ["Automatic", "Manual"])
     condition = st.selectbox("✨ Condition", ["Brand New", "Foreign Used", "Nigerian Used"])
     engine_size = st.number_input("🔧 Engine Size (L)", min_value=0.5, max_value=8.0, value=2.0, step=0.1)
-    registered_city = st.selectbox("📍 Registered City", [
+    registered_city_input = st.selectbox("📍 Registered City", [
         "Lagos", "Abuja", "Port Harcourt", "Kano", "Ibadan",
         "Enugu", "Kaduna", "Benin City", "Warri", "Owerri",
         "Calabar", "Jos", "Ilorin", "Uyo", "Asaba",
         "Abeokuta", "Onitsha", "Aba", "Maiduguri", "Sokoto",
         "Zaria", "Akure", "Bauchi", "Makurdi", "Yola",
-        "Other"
+        "Outside Nigeria"
     ])
+    registered_city = "Lagos" if "Outside" in registered_city_input else registered_city_input
 
 st.divider()
 
@@ -160,4 +161,4 @@ if st.button("💰 Estimate Price", use_container_width=True, type="primary"):
         st.metric("Brand", make)
 
 st.divider()
-st.caption("DriveValue — Built with scikit-learn, SHAP & Streamlit | Nigerian Car Prices Dataset")
+st.caption("DriveValue — Built by Damilare Olayemi | scikit-learn, SHAP & Streamlit")
