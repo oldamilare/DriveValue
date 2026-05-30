@@ -7,3 +7,4 @@ shap==0.45.1
 matplotlib==3.8.4
 seaborn==0.13.2
 kagglehub==0.2.9
+pillow==10.4.0
