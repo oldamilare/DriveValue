@@ -1,9 +1,9 @@
 streamlit==1.39.0
-pandas>=2.2.3
-numpy>=1.26.4
-scikit-learn>=1.5.2
-joblib==1.4.2
+pandas
+numpy
+scikit-learn
+joblib
 shap
-matplotlib>=3.8.4
-seaborn>=0.13.2
-pillow>=11.0.0
+matplotlib
+seaborn
+pillow>=7.1.0,<11
